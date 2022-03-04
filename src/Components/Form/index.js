@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { View, Text, TextInput, Button, Keyboard } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Keyboard } from "react-native";
+import styles from "../../Style";
 import Result from "../Result";
 
 export default function Form() {
@@ -31,24 +32,28 @@ export default function Form() {
 
 
     return (
-        <View>
-            <View>
-                <Text>Informe o capital:</Text>
-                <TextInput 
+        <View style={styles.formContext}>
+            <View style={styles.form}>
+                <Text style={styles.text}>Informe o capital:</Text>
+                <TextInput style={styles.textInput}
                 keyboardType="numeric" 
                 onChangeText={setCapital} 
                 value={capital} />
-                <Text>Informe a taxa de juros (a.m):</Text>
-                <TextInput 
+                <Text style={styles.text}>Informe a taxa de juros (a.m):</Text>
+                <TextInput style={styles.textInput}
                 keyboardType="numeric" 
                 onChangeText={setTaxa} 
                 value={taxa} />
-                <Text>Informe o tempo (meses):</Text>
-                <TextInput keyboardType="numeric" 
+                <Text style={styles.text}>Informe o tempo (meses):</Text>
+                <TextInput style={styles.textInput}
+                keyboardType="numeric" 
                 onChangeText={setTempo} 
                 value={tempo} />
-                <Button title="Calcular" 
-                onPress={() => validar()} />
+                <TouchableOpacity style={styles.button} 
+                onPress={() => validar()} >
+                    <Text style={styles.buttonText}>
+                        Calcular</Text>
+                </TouchableOpacity>
             </View>
             <View>
                 <Result Result={montante}/>

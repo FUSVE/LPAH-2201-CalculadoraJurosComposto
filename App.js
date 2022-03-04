@@ -1,13 +1,13 @@
-import { StyleSheet, View } from 'react-native';
-import Main from './src/Components/Main';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import Form from './src/Components/Form';
 import Title from './src/Components/Title';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Title/>
-      <Main/>
-    </View>
+      <Form/>
+    </ScrollView>
   );
 }
 
@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 60,
   },
 });

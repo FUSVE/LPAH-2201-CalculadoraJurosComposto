@@ -1,9 +1,11 @@
 import { View, Text } from "react-native";
+import styles from "../../Style";
 
 export default function Result(props) {
     return (
-        <View>
-            <Text>{props.Result}</Text>
+        <View style={styles.result}>
+            <Text style={styles.resultText}>Resultado:</Text>
+            <Text style={styles.resultText}>{props.Result}</Text>
         </View>
     );
 }
